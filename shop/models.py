@@ -4,6 +4,7 @@ from django.utils import timezone
 
 
 class User(models.Model):
+    user_number = models.IntegerField(null=True)
     first_name = models.CharField(max_length=100)
     last_name = models.CharField(max_length=100)
     username = models.CharField(max_length=100)
@@ -17,10 +18,11 @@ class User(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     
     def __str__(self):
-        return self.last_name
+        return str(self.user_number)
 
 
 class Address(models.Model):
+    address_number = models.IntegerField(null=True)
     country = models.CharField(max_length=100)
     province = models.CharField(max_length=100)
     city = models.CharField(max_length=100)
@@ -31,10 +33,11 @@ class Address(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     
     def __str__(self):
-        return self.city
+        return str(self.address_number)
 
 
 class Wallet(models.Model):
+    wallet_number = models.IntegerField(null=True)
     amount = models.IntegerField()
     account_number = models.IntegerField()
     bank_name = models.CharField(max_length=100)
@@ -43,10 +46,11 @@ class Wallet(models.Model):
     purchase_date = models.DateTimeField(default=timezone.now)
     
     def __str__(self):
-        return self.amount        
+        return str(self.wallet_number)        
      
         
 class Transaction(models.Model):
+    transaction_number = models.IntegerField(null=True)
     totall_payment = models.IntegerField()
     payment_method = models.CharField(max_length=100)
     tracking_number = models.IntegerField()
@@ -54,10 +58,11 @@ class Transaction(models.Model):
     transaction_date = models.DateTimeField(default=timezone.now)
     
     def __str__(self):
-        return self.totall_payment
+        return str(self.transaction_number)
         
  
 class Order(models.Model):
+    order_number = models.IntegerField(null=True)
     user = models.ForeignKey("User", on_delete=models.CASCADE)
     transaction = models.ForeignKey("Transaction", on_delete=models.CASCADE)
     product = models.ForeignKey("Product", on_delete=models.CASCADE)
@@ -68,7 +73,7 @@ class Order(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     
     def __str__(self):
-        return self.amount
+        return str(self.order_number)
         
 
 class Price(models.Model):
@@ -77,10 +82,11 @@ class Price(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     
     def __str__(self):
-        return self.price_quantity
+        return str(self.price_quantity)
         
         
 class Cart(models.Model):
+    cart_number = models.IntegerField(null=True)
     order = models.ForeignKey("Order", on_delete=models.CASCADE)
     address = models.ForeignKey("Address", on_delete=models.CASCADE)
     product = models.ForeignKey("Product", on_delete=models.CASCADE)
@@ -90,10 +96,11 @@ class Cart(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     
     def __str__(self):
-        return self.totall_payment
+        return str(self.cart_number)
         
         
 class Product(models.Model):
+    product_number = models.IntegerField(null=True)
     product_category = models.ForeignKey("Product_Category", on_delete=models.CASCADE)
     product_stock = models.ForeignKey("Product_Stock", on_delete=models.CASCADE)
     price = models.ForeignKey("Price", on_delete=models.CASCADE)
@@ -104,7 +111,7 @@ class Product(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     
     def __str__(self):
-        return self.p_name
+        return str(self.product_number)
         
         
 class Product_Category(models.Model):
@@ -124,7 +131,7 @@ class Product_Stock(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     
     def __str__(self):
-        return self.product_amount
+        return str(self.product_amount)
         
         
 class Discount(models.Model):
@@ -135,10 +142,11 @@ class Discount(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     
     def __str__(self):
-        return self.discount_percent
+        return str(self.discount_percent)
         
         
 class Product_Comment(models.Model):
+    comment_number = models.IntegerField(null=True)
     product = models.ForeignKey("Product", on_delete=models.CASCADE)
     user = models.ForeignKey("User", on_delete=models.CASCADE)
     comment = models.TextField()
@@ -146,14 +154,15 @@ class Product_Comment(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     
     def __str__(self):
-        return self.user
+        return str(self.comment_number)
 
 
 class Product_Like(models.Model):
+    like_number = models.IntegerField(null=True)
     product = models.ForeignKey("Product", on_delete=models.CASCADE)
     user = models.ForeignKey("User", on_delete=models.CASCADE)
     modified_date = models.DateTimeField(auto_now=True)
     created_date = models.DateTimeField(default=timezone.now)
     
     def __str__(self):
-        return self.user
+        return str(self.like_number)

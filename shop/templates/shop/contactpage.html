@@ -1,0 +1,111 @@
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Amir SHOP</title>
+    <link rel="stylesheet" href="/home/amir/djangogirls/shop/static/css/shop.css">
+    <link rel="icon" type="image/x-icon" href="./data/favicon.ico">
+</head>
+
+<body>
+  <header>
+    <div class="div0">
+      <div class="navbar">
+        <a href="./mainpage.html">Home</a>
+        <a href="./aboutpage.html">About</a>
+        <a href="./contactpage.html">Contact</a>
+        <div class="dropdown">
+          <button class="dropbtn">Category
+           <i class="fa fa-caret-down"></i>
+           </button>
+            <div class="dropdown-content">
+              <div class="header">
+                <h2>Mega Menu</h2>
+              </div>
+              <div class="row">
+                <div class="column">
+                  <h3>Category 1</h3>
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+                <div class="column">
+                  <h3>Category 2</h3>
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+                <div class="column">
+                  <h3>Category 3</h3>
+                  <a href="#">Link 1</a>
+                  <a href="#">Link 2</a>
+                  <a href="#">Link 3</a>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>      
+     <div class="div2">
+      <form id="form"> 
+        <input type="search" id="query" name="q" placeholder="Search...">
+        <button>Search</button>
+        </form>
+     </div>
+     <div class="div3">
+      <form action="/action_page.php">
+        <input type="text" placeholder="Username" name="username">
+        <input type="text" placeholder="Password" name="psw">
+        <button type="submit">Login</button>
+      </form>
+     </div>
+     <div class="div4">
+       <p>Amir Shop</p>
+     </div>
+     <div class="div5">
+       <img src="./data/ShopIcon.png">
+     </div>
+    </div>
+  </header>
+  <br>
+  <section class="contact">
+    <div class="contacttitle">
+      <p class="contacthead">Contact Us</p>
+    </div>
+    <br>
+    <div class="infobox">
+      <div class="address">
+        <p class="address1">Address</p>
+        <p class="address2">Tehran, IRAN</p>
+      </div>
+      <div class="email">
+        <p class="email1">Email</p>
+        <a class="email2" href="mailto:amirgh78@gmail.com">amirgh78@gmail.com</a>
+      </div>
+      <div class="phone">
+        <p class="phone1">Phone Number</p>
+        <p class="phone2">+98 902 378 1999</p>
+      </div>
+    </div>
+    <br>
+    <div class="messageform">
+      <form class="messageform1" action="/action_page.php">
+      <label for="name">Name</label><br>
+      <input type="text" id="name" value="FullName"><br>
+      <label for="email">Email</label><br>
+      <input type="text" id="email" value="Email Address"><br>
+      <label for="subject">Subject</label><br>
+      <input type="text" id="subject" value="Your Message Subject"><br>
+      <label for="message">Message</label><br>
+      <input type="text" id="message" value="Your Message"><br><br>
+      <input type="submit" id="button" value="Submit">
+      </form>
+    </div>
+  </section>
+  <footer>
+    <p>This Website is designed By Amir<br>for more info contact with us<br>
+    <a href="mailto:amirgh78@gmail.com">amirgh78@gmail.com</a></p>
+  </footer>
+</body>
+</html>
+
+
