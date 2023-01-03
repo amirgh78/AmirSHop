@@ -9,7 +9,7 @@ class User(models.Model):
     last_name = models.CharField(max_length=100)
     username = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
-    email_address = models.CharField(max_length=100)
+    email_address = models.CharField(max_lcength=100)
     phone_number = models.IntegerField()
     birthday_date = models.DateField(auto_now=True)
     wallet = models.ForeignKey("Wallet", on_delete=models.CASCADE)
