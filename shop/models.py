@@ -101,6 +101,7 @@ class Cart(models.Model):
         
 class Product(models.Model):
     product_number = models.IntegerField(null=True)
+    product_image = models.ImageField(null=True, blank=True)
     product_category = models.ForeignKey("Product_Category", on_delete=models.CASCADE)
     product_stock = models.ForeignKey("Product_Stock", on_delete=models.CASCADE)
     price = models.ForeignKey("Price", on_delete=models.CASCADE)

@@ -70,23 +70,25 @@
   </header>
   <br>
   <section class="section1">
+  {% for product in products %}
     <table>
       <tr>
-        <td><a href="./productpage.html">Product 1</a></td>
+        <td><a href="">{{ product.p_name }}</a></td>
       </tr>
       <tr>
-        <td>Product 2</td>
+        <td><a href="">{{ product.p_name }}</a></td>
       </tr>
       <tr>
-        <td>Product 3</td>
+        <td><a href="">{{ product.p_name }}</a></td>
       </tr>
       <tr>
-        <td>Product 4</td>
+        <td><a href="">{{ product.p_name }}</a></td>
       </tr>
-      <tr>
-        <td>Product 5</td>
+      <tr>d
+        <td><a href="">{{ product.p_name }}</a></td>
       </tr>
     </table>
+  {% endfor %}
     <div class="div6">
       <img src="{% static 'shop/media/ProductPictureMain.jpg' %}">
     </div>
