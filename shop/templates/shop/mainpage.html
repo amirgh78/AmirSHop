@@ -84,68 +84,72 @@
       <tr>
         <td><a href="">{{ product.p_name }}</a></td>
       </tr>
-      <tr>d
+      <tr>
         <td><a href="">{{ product.p_name }}</a></td>
       </tr>
     </table>
   {% endfor %}
     <div class="div6">
-      <img src="{% static 'shop/media/ProductPictureMain.jpg' %}">
+      {% for product in products %}
+      <img src="{{ product.product_image.url }}">
+      {% endfor %}
     </div>
   </section>
   <br>
-  <section class="section2">
+  <section class="section2">\
+    {% for product in products %}
     <div class="bestselllist">
       <p>Best Sellers</p>
     </div>
     <div class="bestsellitem">
-      <img src="{% static 'shop/media/ProductPictureBestSell.jpg' %}">
+      <img src="{{ product.product_image.url }}">
     </div>
     <div class="bestsellitem">
-      <img src="{% static 'shop/media/ProductPictureBestSell.jpg' %}">
+      <img src="{{ product.product_image.url }}">
     </div>
     <div class="bestsellitem">
-      <img src="{% static 'shop/media/ProductPictureBestSell.jpg' %}">
+      <img src="{{ product.product_image.url }}">
     </div>
     <div class="bestsellitem">
-      <img src="{% static 'shop/media/ProductPictureBestSell.jpg' %}">
+      <img src="{{ product.product_image.url }}">
     </div>
     <div class="bestsellitemdes">
-      <p>Product 1</p>
+      <a href="">{{ product.p_name }}</a>
     </div>
     <div class="bestsellitemdes">
-      <p>Product 2</p>
+      <a href="">{{ product.p_name }}</a>
     </div>
     <div class="bestsellitemdes">
-      <p>Product 3</p>
+      <a href="">{{ product.p_name }}</a>
     </div>
     <div class="bestsellitemdes">
-      <p>Product 4</p>
+      <a href="">{{ product.p_name }}</a>
     </div>
     <div class="bestsellitem">
-      <img src="{% static 'shop/media/ProductPictureBestSell.jpg' %}">
+      <img src="{{ product.product_image.url }}">
     </div>
     <div class="bestsellitem">
-      <img src="{% static 'shop/media/ProductPictureBestSell.jpg' %}">
+      <img src="{{ product.product_image.url }}">
     </div>
     <div class="bestsellitem">
-      <img src="{% static 'shop/media/ProductPictureBestSell.jpg' %}">
+      <img src="{{ product.product_image.url }}">
     </div>
     <div class="bestsellitem">
-      <img src="{% static 'shop/media/ProductPictureBestSell.jpg' %}">
+      <img src="{{ product.product_image.url }}">
     </div>
     <div class="bestsellitemdes">
-      <p>Product 5</p>
+      <a href="">{{ product.p_name }}</a>
     </div>
     <div class="bestsellitemdes">
-      <p>Product 6</p>
+      <a href="">{{ product.p_name }}</a>
     </div>
     <div class="bestsellitemdes">
-      <p>Product 7</p>
+      <a href="">{{ product.p_name }}</a>
     </div>
     <div class="bestsellitemdes">
-      <p>Product 8</p>
+      <a href="">{{ product.p_name }}</a>
     </div>
+    {% endfor %}
   </section>
   <footer>
     <p>This Website is designed By Amir<br>for more info contact with us<br>

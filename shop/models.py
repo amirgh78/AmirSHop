@@ -9,7 +9,7 @@ class User(models.Model):
     last_name = models.CharField(max_length=100)
     username = models.CharField(max_length=100)
     password = models.CharField(max_length=100)
-    email_address = models.CharField(max_lcength=100)
+    email_address = models.CharField(max_length=100)
     phone_number = models.IntegerField()
     birthday_date = models.DateField(auto_now=True)
     wallet = models.ForeignKey("Wallet", on_delete=models.CASCADE)
@@ -90,7 +90,7 @@ class Cart(models.Model):
     order = models.ForeignKey("Order", on_delete=models.CASCADE)
     address = models.ForeignKey("Address", on_delete=models.CASCADE)
     product = models.ForeignKey("Product", on_delete=models.CASCADE)
-    totall_payment = models.IntegerField()
+    total_payment = models.IntegerField()
     quantity = models.IntegerField()
     modified_date = models.DateTimeField(auto_now=True)
     created_date = models.DateTimeField(default=timezone.now)
@@ -101,7 +101,7 @@ class Cart(models.Model):
         
 class Product(models.Model):
     product_number = models.IntegerField(null=True)
-    product_image = models.ImageField(null=True, blank=True)
+    product_image = models.ImageField(null=True, blank=True, upload_to='media')
     product_category = models.ForeignKey("Product_Category", on_delete=models.CASCADE)
     product_stock = models.ForeignKey("Product_Stock", on_delete=models.CASCADE)
     price = models.ForeignKey("Price", on_delete=models.CASCADE)

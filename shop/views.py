@@ -9,3 +9,10 @@ def product_list(request):
 def product_list(request):
     products = Product.objects.filter(created_date__lte=timezone.now()).order_by('created_date')
     return render(request, 'shop/mainpage.html', {'products': products})
+
+def index(request):
+    data = Image.objects.all()
+    context = {
+        'data' : data
+    }
+    return render(request,"mainpage.html", context)
