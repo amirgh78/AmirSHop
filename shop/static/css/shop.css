@@ -137,7 +137,7 @@ header {
   margin: 1px 1px;
 }
 
-.div4 p {
+.div4 p{
   width: 80px;
   height: 20px;
   padding: 35px 5px 35px 5px ;
@@ -162,14 +162,26 @@ header {
   border-radius: 25px;
 }
 
-.section1 .td {
+.section1 td {
   width: 392px;
   height: 70px;
   padding: 2px 2px 2px 2px;
   border: solid 1px black;
   text-align: center;
-  border-radius: 60px;
+  border-radius: 25px;
+  display:inline-block;
+  margin: 5px 5px 5px 5px;
 }
+
+.section1 a {
+  width: 200px;
+  height: 20px;
+  text-align: center;
+  display:inline-block;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+  
 
 .section1 table {
   border-spacing: 2px;
@@ -237,7 +249,16 @@ header {
   margin-bottom: 12.5px;
   text-align: center;
   border-radius: 25px;
-} 
+}
+
+.section2 a {
+  width: 200px;
+  height: 20px;
+  text-align: center;
+  display:inline-block;
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
 
 .section2 p {
   width: 298px;
@@ -558,43 +579,6 @@ p.productpriceandcategory2 {
   width: 450px;
   height: 450px;
   margin: 25px 75px 25px 75px;
-}
-
-.productinfo2 {
-  width: 1300px;
-  height: 400px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: rgba(116, 179, 175, 0.39);
-  border-radius: 25px;
-}
-
-.productcritic {
-  width: 1200px;
-  height: 350px;
-  border: solid 1px black;
-  margin-right: auto;
-  margin-left: auto;
-  border-radius: 25px;
-  padding: 24px 20px 24px 20px;
-}
-
-.productcritic p{
-  width: 200px;
-  height: 20px;
-  text-align: center;
-  font-size: 18px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.productinfo3 {
-  width: 1300px;
-  height: 450px;
-  margin-left: auto;
-  margin-right: auto;
-  background-color: rgba(116, 179, 175, 0.39);
-  border-radius: 25px;
 }
 
 .userpage {

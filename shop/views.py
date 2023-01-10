@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.utils import timezone
 from .models import Product
 
@@ -16,3 +16,7 @@ def index(request):
         'data' : data
     }
     return render(request,"mainpage.html", context)
+
+def product_detail(request, pk):
+    product = get_object_or_404(Product, pk=pk)
+    return render(request, 'shop/productpage.html', {'product': product})

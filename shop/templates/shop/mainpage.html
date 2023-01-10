@@ -73,19 +73,19 @@
   {% for product in products %}
     <table>
       <tr>
-        <td><a class="td" href="">{{ product.p_name }}</a></td>
+        <td><a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a></td>
       </tr>
       <tr>
-        <td><a class="td" href="">{{ product.p_name }}</a></td>
+        <td><a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a></td>
       </tr>
       <tr>
-        <td><a class="td" href="">{{ product.p_name }}</a></td>
+        <td><a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a></td>
       </tr>
       <tr>
-        <td><a class="td" href="">{{ product.p_name }}</a></td>
+        <td><a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a></td>
       </tr>
       <tr>
-        <td><a class="td" href="">{{ product.p_name }}</a></td>
+        <td><a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a></td>
       </tr>
     </table>
   {% endfor %}
@@ -96,61 +96,62 @@
     </div>
   </section>
   <br>
-  <section class="section2">\
+  <section class="section2">
     {% for product in products %}
     <div class="bestselllist">
       <p>Best Sellers</p>
     </div>
     <div class="bestsellitem">
-      <img src="{{ product.product_image.url }}">
+      <img src="{{ product.product_image.url }}" width="298" height="298" >
     </div>
     <div class="bestsellitem">
-      <img src="{{ product.product_image.url }}">
+      <img src="{{ product.product_image.url }}" width="298" height="298" >
     </div>
     <div class="bestsellitem">
-      <img src="{{ product.product_image.url }}">
+      <img src="{{ product.product_image.url }}" width="298" height="298" >
     </div>
     <div class="bestsellitem">
-      <img src="{{ product.product_image.url }}">
+      <img src="{{ product.product_image.url }}" width="298" height="298" >
     </div>
     <div class="bestsellitemdes">
-      <a href="">{{ product.p_name }}</a>
+      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a>
     </div>
     <div class="bestsellitemdes">
-      <a href="">{{ product.p_name }}</a>
+      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a>
     </div>
     <div class="bestsellitemdes">
-      <a href="">{{ product.p_name }}</a>
+      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a>
     </div>
     <div class="bestsellitemdes">
-      <a href="">{{ product.p_name }}</a>
+      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a>
     </div>
     <div class="bestsellitem">
-      <img src="{{ product.product_image.url }}">
+      <img src="{{ product.product_image.url }}" width="298" height="298" >
     </div>
     <div class="bestsellitem">
-      <img src="{{ product.product_image.url }}">
+      <img src="{{ product.product_image.url }}" width="298" height="298" >
     </div>
     <div class="bestsellitem">
-      <img src="{{ product.product_image.url }}">
+      <img src="{{ product.product_image.url }}" width="298" height="298" >
     </div>
     <div class="bestsellitem">
-      <img src="{{ product.product_image.url }}">
+      <img src="{{ product.product_image.url }}" width="298" height="298" >
     </div>
     <div class="bestsellitemdes">
-      <a href="">{{ product.p_name }}</a>
+      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a>
     </div>
     <div class="bestsellitemdes">
-      <a href="">{{ product.p_name }}</a>
+      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a>
     </div>
     <div class="bestsellitemdes">
-      <a href="">{{ product.p_name }}</a>
+      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a>
     </div>
     <div class="bestsellitemdes">
-      <a href="">{{ product.p_name }}</a>
+      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a>
     </div>
     {% endfor %}
   </section>
+  <br>
   <footer>
     <p>This Website is designed By Amir<br>for more info contact with us<br>
     <a href="mailto:amirgh78@gmail.com">amirgh78@gmail.com</a></p>
