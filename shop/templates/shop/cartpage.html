@@ -17,9 +17,9 @@
         <a href="/aboutpage">About</a>
         <a href="/contactpage">Contact</a>
         <a href="/cartpage">Cart</a>
-      </div>      
+      </div>
      <div class="div2">
-      <form id="form"> 
+      <form id="form">
         <input type="search" id="query" name="q" placeholder="Search...">
         <button>Search</button>
         </form>
@@ -40,24 +40,6 @@
     </div>
   </header>
   <br>
-  <section class="productinfo1">
-      <div class="productinfo">
-          <div class="productname">
-              <p>{{ product.p_name }}<p>
-          </div>
-          <div class="productpriceandcategory">
-             <p class="productpriceandcategory1">{{ product.price }}<p>
-             <p class="productpriceandcategory2">{{ product.product_category }}</p>
-             <p class="productaddtocart">add to cart</p>
-          </div>
-          <div class="productdescription1">
-              <p>{{ product.explanation }}</p>
-          </div>
-      </div>
-      <div class="productimg">
-          <img src="{{ product.product_image.url }}" width="498" height="498" >
-      </div>
-  </section>
   <br>
   <footer>
     <p>This Website is designed By Amir<br>for more info contact with us<br>

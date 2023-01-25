@@ -3,7 +3,7 @@ from django.utils import timezone
 from .models import Product
 
 # Create your views here.
-def product_list(request):
+def mainpage(request):
     return render(request, 'shop/mainpage.html', {})
     
 def product_list(request):
@@ -20,3 +20,15 @@ def index(request):
 def product_detail(request, pk):
     product = get_object_or_404(Product, pk=pk)
     return render(request, 'shop/productpage.html', {'product': product})
+
+def userpage(request):
+    return render(request, "shop/userpage.html")
+
+def aboutpage(request):
+    return render(request, "shop/aboutpage.html")
+
+def contactpage(request):
+    return render(request, "shop/contactpage.html")
+
+def cartpage(request):
+    return render(request, "shop/cartpage.html")
