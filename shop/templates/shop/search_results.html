@@ -19,17 +19,10 @@
         <a href="/cartpage">Cart</a>
       </div>
      <div class="div2">
-      <form id="form">
-        <input type="search" id="query" name="q" placeholder="Search...">
+      <form id="form" action="{% url 'search_results' %}" method="get">
+        <input type="text" id="query" name="q" placeholder="Search...">
         <button>Search</button>
         </form>
-     </div>
-     <div class="div3">
-      <form action="/action_page.php">
-        <input type="text" placeholder="Username" name="username">
-        <input type="text" placeholder="Password" name="psw">
-        <button type="submit">Login</button>
-      </form>
      </div>
      <div class="div4">
        <p>Amir Shop</p>
@@ -40,45 +33,14 @@
     </div>
   </header>
   <br>
-  <section class="userpage">
-      <div class="userinfo">
-          <p>First Name: </p>
-          <p>Last Name: </p>
-          <p>Email Address: </p>
-          <p>Phone Number: </p>
-          <p>Birthday Date: </p>
-          <p>Join Date: </p>
-      </div>
-      <br>
-      <div class="useraddress">
-          <p id="addresstitle">Address Lists: </p>
-          <p>Address 1: </p>
-          <p>Address 2: </p>
-          <p>Address 3: </p>
-      </div>
-      <br>
-      <div>
-           <p id="transactiontitle">Last Transactions: </p>
-          <div id="transactions">
-              <p>Transaction Number: </p>
-              <p>Totall Payment: </p>
-              <p>Transaction Date: </p>
-          </div>
-          <br>
-          <div id="transactions">
-              <p>Transaction Number: </p>
-              <p>Totall Payment: </p>
-              <p>Transaction Date: </p>
-          </div>
-          <br>
-          <div id="transactions">
-              <p>Transaction Number: </p>
-              <p>Totall Payment: </p>
-              <p>Transaction Date: </p>
-          </div>
-      </div>
+  <section class="searchlist">
+      <h3>Search Results</h3>
+      <ul>
+          {% for product in object_list %}
+              <a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}, {{ product.explanation }}</a>
+          {% endfor %}
+      </ul>
   </section>
-  <br>
   <footer>
     <p>This Website is designed By Amir<br>for more info contact with us<br>
     <a href="mailto:amirgh78@gmail.com">amirgh78@gmail.com</a></p>

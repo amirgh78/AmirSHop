@@ -19,17 +19,10 @@
         <a href="/cartpage">Cart</a>
       </div>
      <div class="div2">
-      <form id="form">
-        <input type="search" id="query" name="q" placeholder="Search...">
+      <form id="form" action="{% url 'search_results' %}" method="get">
+        <input type="text" id="query" name="q" placeholder="Search...">
         <button>Search</button>
         </form>
-     </div>
-     <div class="div3">
-      <form action="/action_page.php">
-        <input type="text" placeholder="Username" name="username">
-        <input type="text" placeholder="Password" name="psw">
-        <button type="submit">Login</button>
-      </form>
      </div>
      <div class="div4">
        <p>Amir Shop</p>
@@ -40,6 +33,55 @@
     </div>
   </header>
   <br>
+  <section class="cart">
+      <div class="item1">
+          <img class="item1img" src="{% static 'shop/media/ProductPictureBestSell.jpg' %}" width="200" height="200">
+          <div class="item1info">
+              <p>Product Name:</p>
+              <p>Price: </p>
+              <p>Quantity: </p>
+          </div>
+      </div>
+      <div class="item2">
+          <img class="item2img" src="{% static 'shop/media/ProductPictureBestSell.jpg' %}" width="200" height="200">
+          <div class="item2info">
+              <p>Product Name:</p>
+              <p>Price: </p>
+              <p>Quantity: </p>
+          </div>
+      </div>
+      <div class="item3">
+          <img class="item3img" src="{% static 'shop/media/ProductPictureBestSell.jpg' %}" width="200" height="200">
+          <div class="item3info">
+              <p>Product Name:</p>
+              <p>Price: </p>
+              <p>Quantity: </p>
+          </div>
+      </div>
+  </section>
+  <br>
+  <div class="chooseaddress">
+      <div>
+          <p>Choose Address</p>
+          <form id="addressform" action="/action_page.php" method="get">
+              <input id="forminput" type="checkbox" name="Address1" value="1"><label id="formlable" for="Address1"> Address 1:</label><br><br>
+              <input id="forminput" type="checkbox" name="Address2" value="2"><label id="formlable" for="Address2"> Address 2:</label><br><br>
+              <input id="forminput" type="checkbox" name="Address3" value="3"><label id="formlable" for="Address3"> Address 3:</label><br><br>
+              <input id="formsubmit" type="submit" value="Submit">
+          </form>
+      </div>
+  </div>
+  <br>
+  <section class="payment1">
+    <div>
+        <p>Total:</p>
+        <form id="choosepayment" action="/action_page.php" method="get">
+            <input id="paymentinput" type="checkbox" name="wallet" value="wallet"><label id="paymentlable" for="wallet"> Pay From Wallet</label><br>
+            <input id="paymentinput" type="checkbox" name="online" value="online"><label id="paymentlable" for="online"> Pay Online</label><br><br>
+        </form>
+        <input id="purchase" type="submit" value="Payment">
+    </div>
+  </section>
   <br>
   <footer>
     <p>This Website is designed By Amir<br>for more info contact with us<br>
@@ -47,5 +89,7 @@
   </footer>
 </body>
 </html>
+
+
 
 

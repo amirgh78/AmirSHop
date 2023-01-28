@@ -112,9 +112,8 @@ header {
 } 
 
 .div2 input {
-  width: 176px;
+  width: 376px;
   height: 26px;
-  margin: 1px 1px;
 }
 
 .div2 input {
@@ -137,11 +136,18 @@ header {
   margin: 1px 1px;
 }
 
-.div4 p{
+div.div4{
   width: 80px;
-  height: 20px;
+  height: 100px;
   padding: 35px 5px 35px 5px ;
   margin: 5px 5px 5px 5px;
+  margin-right: 270px;
+  float: right;
+}
+
+.div4 p {
+  width: 80px;
+  height: 20px;
   float: right;
 }
 
@@ -149,8 +155,8 @@ header {
   width: 80px;
   height: 80px;
   padding: 5px 5px 5px 5px ;
-  margin: 5px 5px 5px 5px;
-  float: right;
+  margin: 5px 5px 5px 10px;
+  float: left;
 }
 
 .section1 {
@@ -594,52 +600,260 @@ p.productaddtocart {
 
 .userpage {
   width: 1300px;
-  height: 940px;
+  height: 950px;
   margin-left: auto;
   margin-right: auto;
   background-color: rgba(116, 179, 175, 0.39);
   border-radius: 25px;
 }
 
-.userinfo {
-  width: 1250px;
+.userpage div {
+  width: 1200px;
   height: 300px;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgb(0, 112, 79);
+  background-color: rgba(25, 62, 61, 0.39);
   border-radius: 25px;
 }
 
-.userinfoshow1 {
-  width: 350px;
-  height: 62px;
-  background-color: rgba(207, 209, 76, 0.39);
+.userinfo p {
+  width: 580px;
+  height: 80px;
+  background-color: rgba(11, 83, 77, 0.39);
   border-radius: 25px;
-  margin: 0px 5px 5px 5px ;
+  float: left;
+  margin: 10px 10px;
+  padding: 25px 5px;
 }
 
-.userinfoshow1 p {
+#addresstitle {
+  width: 120px;
+  height: 40px;
+  margin-left: 15px;
+  padding-top: 5px;
+}
+
+.useraddress p {
+  width: 1170px;
+  height: 70px;
+  background-color: rgba(11, 83, 77, 0.39);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+  padding-left: 5px;
+  padding-top: 20px;
+}
+
+#transactiontitle {
+  width: 150px;
+  height: 40px;
+  margin-left: 15px;
+  padding-top: 5px;
+  background-color: rgba(11, 83, 77, 0.39);
+  border-radius: 25px;
+}
+
+#transactions {
+  width: 1170px;
+  height: 65px;
+  background-color: rgba(11, 83, 77, 0.39);
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 25px;
+  padding-left: 5px;
+  padding-top: 20px;
+}
+ #transactions p{
+  width: 300px;
+  height: 40px;
+  float: left;
+}
+
+.cart {
+  width: 1300px;
+  height: 640px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(116, 179, 175, 0.39);
+  border-radius: 25px;
+ }
+
+img.item1img {
+  margin: 5px 5px;
+  border-radius: 25px;
+  float: left;
+}
+
+div.item1info {
+  width: 200px;
+  height: 200px;
+  margin: 5px 700px 5px 5px;
+  float: left;
+}
+
+.item1info p {
+  width: 200px;
+  height: 50px;
+  padding-top: 20px;
+}
+
+img.item2img {
+  margin: 5px 5px;
+  border-radius: 25px;
+  float: left;
+}
+
+div.item2info {
+  width: 200px;
+  height: 200px;
+  margin: 5px 700px 5px 5px;
+  float: left;
+}
+
+.item2info p {
+  width: 200px;
+  height: 50px;
+  padding-top: 20px;
+}
+
+img.item3img {
+  margin: 5px 5px;
+  border-radius: 25px;
+  float: left;
+}
+
+div.item3info {
+  width: 200px;
+  height: 200px;
+  margin: 5px 700px 5px 5px;
+  float: left;
+}
+
+.item3info p {
+  width: 200px;
+  height: 50px;
+  padding-top: 20px;
+}
+
+.chooseaddress {
+  width: 1300px;
+  height: 250px;
+  background-color: rgba(116, 179, 175, 0.39);
+  border-radius: 25px;
+  margin-left: auto;
+  margin-right: auto;
+ }
+
+.chooseaddress p {
   width: 150px;
   height: 25px;
-  margin-right: auto;
+  background-color: rgba(14, 42, 41, 0.39);
+  border-radius: 25px;
+  padding-left: 5px;
+  text-align: center;
+  margin-left: 15px;
+}
+
+input#forminput {
+  width: 100px;
+  height: 20px;
+}
+
+label#formlable {
+  width: 100px;
+  height: 20px;
+}
+
+input#formsubmit {
+  width: 150px;
+  height: 30px;
+  margin-left: 40px;
+}
+
+
+.payment1 {
+  width: 1300px;
+  height: 70px;
   margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(116, 179, 175, 0.39);
+  border-radius: 25px;
+}
+
+.payment1 p {
+  width: 300px;
+  height: 70px;
+  float: left;
+  background-color: rgba(15, 62, 60, 0.39);
+  border-radius: 25px;
+  margin-left: 100px;
+  padding-left: 20px;
+  padding-top: 20px;
+}
+
+.payment1 form {
+  width: 300px;
+  height: 70px;
+  float: left;
+  background-color: rgba(15, 62, 60, 0.39);
+  border-radius: 25px;
+  margin-left: 100px;
+}
+
+#purchase {
+  width: 300px;
+  height: 70px;
+  float: left;
+  border-radius: 25px;
+  margin-left: 100px;
+}
+
+#paymentinput {
+  width: 20px;
+  height: 20px;
+  margin-left: 20px;
+  margin-top: 3px;
+}
+
+
+.searchlist {
+  width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(116, 179, 175, 0.39);
+  border-radius: 25px;
+}
+
+.login {
+  width: 1300px;
+  height: 200px;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(116, 179, 175, 0.39);
+  border-radius: 25px;
+  margin-top: 20px;
+}
+
+.login h2 {
   text-align: center;
 }
 
-.userorderhistory {
-  width: 1250px;
-  height: 300px;
+div.loginform {
+  width: 400px;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgb(52, 78, 70);
-  border-radius: 25px;
 }
 
-.useraddress {
-  width: 1250px;
-  height: 300px;
+.loginform button {
+  margin-left: 175px;
+}
+
+.registration {
+  width: 1300px;
   margin-left: auto;
   margin-right: auto;
-  background-color: rgb(52, 78, 70);
+  background-color: rgba(116, 179, 175, 0.39);
   border-radius: 25px;
+  margin-top: 20px;
 }
+
