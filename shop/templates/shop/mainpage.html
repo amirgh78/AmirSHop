@@ -12,24 +12,45 @@
 <body>
   <header>
     <div class="div0">
-      <div class="navbar">
-        <a href="/userpage">Panel</a>
+        <div class="navbar">
+        <a href="/mainpage">Home</a>
         <a href="/aboutpage">About</a>
-        <a href="/contactpage">Contact</a>
+        <a href="/contact">Contact</a>
         <a href="/cartpage">Cart</a>
-      </div>      
-     <div class="div2">
+      </div>
+        <div class="div2">
       <form id="form" action="{% url 'search_results' %}" method="get">
         <input type="text" id="query" name="q" placeholder="Search...">
         <button>Search</button>
         </form>
      </div>
-     <div class="div4">
-       <p>Amir Shop</p>
-     </div>
-     <div class="div5">
-       <img src="{% static 'shop/media/ShopIcon.png' %}">
-     </div>
+        <div class="div3">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="/mainpage">Home</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="False" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mr-auto">
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/logout">Logout</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/userpage">Welcome, {{user.username}}</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/login">Login</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="div5">
+         <a href="/mainpage"><img src="{% static 'shop/media/ShopIcon.png' %}"></a>
+        </div>
     </div>
   </header>
   <br>
@@ -37,19 +58,19 @@
   {% for product in products %}
     <table>
       <tr>
-        <td><a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a></td>
+        <td><a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }}</a></td>
       </tr>
       <tr>
-        <td><a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a></td>
+        <td><a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }}</a></td>
       </tr>
       <tr>
-        <td><a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a></td>
+        <td><a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }}</a></td>
       </tr>
       <tr>
-        <td><a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a></td>
+        <td><a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }}</a></td>
       </tr>
       <tr>
-        <td><a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a></td>
+        <td><a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }}</a></td>
       </tr>
     </table>
   {% endfor %}
@@ -78,16 +99,16 @@
       <img src="{{ product.product_image.url }}" width="298" height="298" >
     </div>
     <div class="bestsellitemdes">
-      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a>
+      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }}</a>
     </div>
     <div class="bestsellitemdes">
-      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a>
+      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }}</a>
     </div>
     <div class="bestsellitemdes">
-      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a>
+      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }}</a>
     </div>
     <div class="bestsellitemdes">
-      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a>
+      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }}</a>
     </div>
     <div class="bestsellitem">
       <img src="{{ product.product_image.url }}" width="298" height="298" >
@@ -102,16 +123,16 @@
       <img src="{{ product.product_image.url }}" width="298" height="298" >
     </div>
     <div class="bestsellitemdes">
-      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a>
+      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }}</a>
     </div>
     <div class="bestsellitemdes">
-      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a>
+      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }}</a>
     </div>
     <div class="bestsellitemdes">
-      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a>
+      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }}</a>
     </div>
     <div class="bestsellitemdes">
-      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.p_name }}</a>
+      <a href="{% url 'product_detail' pk=product.pk %}">{{ product.name }}</a>
     </div>
     {% endfor %}
   </section>
@@ -120,6 +141,8 @@
     <p>This Website is designed By Amir<br>for more info contact with us<br>
     <a href="mailto:amirgh78@gmail.com">amirgh78@gmail.com</a></p>
   </footer>
+
+<script src="https://unpkg.com/htmx.org@1.7.0"></script>
 </body>
 </html>
 

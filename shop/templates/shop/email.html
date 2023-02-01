@@ -54,22 +54,35 @@
     </div>
   </header>
   <br>
-  <section class="productinfo1">
-      <div class="productinfo">
-          <div class="productname">
-              <p>{{ product.p_name }}<p>
-          </div>
-          <div class="productpriceandcategory">
-             <p class="productpriceandcategory1">{{ product.price }}<p>
-             <p class="productpriceandcategory2">{{ product.product_category }}</p>
-             <p class="productaddtocart">add to cart</p>
-          </div>
-          <div class="productdescription1">
-              <p>{{ product.explanation }}</p>
-          </div>
+  <section class="contact">
+    <div class="contacttitle">
+      <p class="contacthead">Contact Us</p>
+    </div>
+    <br>
+    <div class="infobox">
+      <div class="address">
+        <p class="address1">Address</p>
+        <p class="address2">Tehran, IRAN</p>
       </div>
-      <div class="productimg">
-          <img src="{{ product.product_image.url }}" width="498" height="498" >
+      <div class="email">
+        <p class="email1">Email</p>
+        <a class="email2" href="mailto:amirgh78@gmail.com">amirgh78@gmail.com</a>
+      </div>
+      <div class="phone">
+        <p class="phone1">Phone Number</p>
+        <p class="phone2">+98 902 378 1999</p>
+      </div>
+    </div>
+    <br>
+      <div class="sendemail">
+          <h1>Contact Us</h1>
+          <form method="post">
+              {% csrf_token %}
+              {{ form.as_p }}
+              <div class="form-actions">
+                  <button type="submit">Send</button>
+              </div>
+          </form>
       </div>
   </section>
   <br>
@@ -79,5 +92,3 @@
   </footer>
 </body>
 </html>
-
-

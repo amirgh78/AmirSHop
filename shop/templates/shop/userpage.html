@@ -12,35 +12,65 @@
 <body>
   <header>
     <div class="div0">
-      <div class="navbar">
-        <a href="/userpage">Panel</a>
+        <div class="navbar">
+        <a href="/mainpage">Home</a>
         <a href="/aboutpage">About</a>
-        <a href="/contactpage">Contact</a>
+        <a href="/contact">Contact</a>
         <a href="/cartpage">Cart</a>
       </div>
-     <div class="div2">
+        <div class="div2">
       <form id="form" action="{% url 'search_results' %}" method="get">
         <input type="text" id="query" name="q" placeholder="Search...">
         <button>Search</button>
         </form>
      </div>
-     <div class="div4">
-       <p>Amir Shop</p>
-     </div>
-     <div class="div5">
-       <img src="{% static 'shop/media/ShopIcon.png' %}">
-     </div>
+        <div class="div3">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="/mainpage">Home</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="False" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarText">
+                    <ul class="navbar-nav mr-auto">
+                        {% if user.is_authenticated %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/logout">Logout</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="/userpage">Welcome, {{user.username}}</a>
+                            </li>
+                        {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link" href="/login">Login</a>
+                            </li>
+                        {% endif %}
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <div class="div5">
+         <a href="/mainpage"><img src="{% static 'shop/media/ShopIcon.png' %}"></a>
+        </div>
     </div>
   </header>
   <br>
   <section class="userpage">
       <div class="userinfo">
-          <p>First Name: </p>
-          <p>Last Name: </p>
-          <p>Email Address: </p>
-          <p>Phone Number: </p>
-          <p>Birthday Date: </p>
-          <p>Join Date: </p>
+          {% if user.is_authenticated %}
+              <p>First Name: {{user.username}}</p>
+              <p>Last Name: </p>
+              <p>Email Address: </p>
+              <p>Phone Number: </p>
+              <p>Birthday Date: </p>
+              <p>Join Date: </p>
+          {% else %}
+              <p>First Name: </p>
+              <p>Last Name: </p>
+              <p>Email Address: </p>
+              <p>Phone Number: </p>
+              <p>Birthday Date: </p>
+              <p>Join Date: </p>
+          {% endif %}
       </div>
       <br>
       <div class="useraddress">
