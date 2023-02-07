@@ -3,6 +3,7 @@ from django.utils import timezone
 from PIL import Image
 from io import BytesIO
 from django.core.files import File
+from django.contrib.auth.models import User
 
 
 class Category(models.Model):
@@ -13,6 +14,7 @@ class Category(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
 
     class Meta:
+        verbose_name_plural = 'Categories'
         ordering = ('name',)
 
     def __str__(self):
@@ -50,7 +52,7 @@ class Product(models.Model):
             else:
                 return 'https://via.placeholder.com/240x240x.jpg'
 
-    def make_thumbnail(self, image, size=(300,300)):
+    def make_thumbnail(self, image, size=(300, 300)):
         img = Image.open(image)
         img.conver('RGB')
         img.thumbnail(size)
@@ -62,3 +64,21 @@ class Product(models.Model):
 
         return thumbnail
 
+    def get_rating(self):
+        reviews_total = 0
+
+        for review in self.reviews.all():
+            reviews_total += review.rating
+
+        if reviews_total > 0:
+            return reviews_total / self.reviews.count()
+
+        return 0
+
+
+class Review(models.Model):
+    product = models.ForeignKey(Product, related_name='reviews', on_delete=models.CASCADE)
+    rating = models.IntegerField(default=3)
+    content = models.TextField()
+    created_by = models.ForeignKey(User, related_name='reviews', on_delete=models.CASCADE)
+    created_at = models.DateTimeField(auto_now_add=True)

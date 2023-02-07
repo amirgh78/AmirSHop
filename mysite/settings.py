@@ -35,6 +35,9 @@ LOGIN_URL = '/login/'
 SESSION_COOKIE_AGE = 86400
 CART_SESSION_ID = 'cart'
 
+STRIPE_API_KEY_PUBLISHABLE = 'pk_test_51MYkUYKRY3nhsN41lCiVGG4hJd4XX49ooGOmJcS5CKwtfpS3MMAS43QTj5UFtAsR5NsFcEmID88odDc480TN9pVC00eCHzL1Dv'
+STRIPE_API_KEY_HIDDEN = 'sk_test_51MYkUYKRY3nhsN41LDo1ijR9Bmnz1AUcKvWx0IMoMmhVUqMJrCuchsL88zIUnhE8maGad6RPd79sSfGImcOKqJjx00772Gb8WC'
+
 # Application definition
 
 INSTALLED_APPS = [
@@ -48,6 +51,7 @@ INSTALLED_APPS = [
     'shop',
     'product',
     'cart',
+    'order',
 ]
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'
