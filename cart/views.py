@@ -25,7 +25,7 @@ def update_cart(request, product_id, action):
     cart = Cart(request)
 
     if action == 'increment':
-        cart.add(product_id, 1, True)
+        cart.add(product_id, +1, True)
     else:
         cart.add(product_id, -1, True)
 
@@ -37,7 +37,7 @@ def update_cart(request, product_id, action):
 
         item = {
             'product': {
-                'id': product_id,
+                'id': product.id,
                 'name': product.name,
                 'image': product.image,
                 'get_thumbnail': product.get_thumbnail(),
