@@ -1,6 +1,5 @@
 from django.contrib.auth import views
 from django.urls import path
-
 from shop.views import frontpage, shop, signup, myaccount, edit_myaccount
 from product.views import product
 
