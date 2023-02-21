@@ -4,8 +4,9 @@ import stripe
 from django.conf import settings
 from django.http import JsonResponse
 
-from .models import Order, OrderItem
 from cart.cart import Cart
+
+from .models import Order, OrderItem
 
 
 def start_order(request):
@@ -13,13 +14,13 @@ def start_order(request):
     data = json.loads(request.body)
     total_price = 0
 
-    item = []
+    items = []
 
     for item in cart:
         product = item['product']
         total_price += product.price * int(item['quantity'])
 
-        item.append({
+        items.append({
             'price_data': {
                 'currency': 'usd',
                 'product_data': {
@@ -60,8 +61,7 @@ def start_order(request):
         price = product.price * quantity
 
         item = OrderItem.objects.create(order=order, product=product, price=price, quantity=quantity)
+
     cart.clear()
+
     return JsonResponse({'session': session, 'order': payment_intent})
-
-
-

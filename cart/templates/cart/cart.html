@@ -1,20 +1,20 @@
-{% extends 'shop/base.html' %}
+{% extends 'core/base.html' %}
 
 {% block title %}Cart{% endblock %}
 
 {% block content %}
 <div class="max-w-6xl mx-auto flex flex-wrap items-start py-6 px-6 xl:px-0">
-<div class="product w-full lg:w-3/4">
-    {% for item in cart %}
-        {% include 'cart/partials/cart_item.html' %}
-    {% endfor %}
-</div>
+    <div class="products w-full lg:w-3/4">
+        {% for item in cart %}
+            {% include 'cart/partials/cart_item.html' %}
+        {% endfor %}
+    </div>
 
     <div class="summary w-full md:w-1/4 p-6 bg-gray-100 rounded-xl mt-3">
         <h2 class="uppercase text-lg mb-5">Summary</h2>
 
         <div class="mb-6 flex justify-between">
-            <span class="front-semibold">Total</span>
+            <span class="font-semibold">Total</span>
             <span
                 hx-get="{% url 'hx_cart_total' %}"
                 hx-trigger="update-menu-cart from:body"

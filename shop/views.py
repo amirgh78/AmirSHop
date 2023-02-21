@@ -1,13 +1,17 @@
-from django.shortcuts import render, redirect
-from django.db.models import Q
-from .forms import SignUpForm
-from django.contrib.auth import login, authenticate, logout
-from product.models import Product, Category
+import re
+from django.contrib.auth import login
 from django.contrib.auth.decorators import login_required
+from django.db.models import Q
+from django.shortcuts import render, redirect
+
+from product.models import Product, Category
+
+from .forms import SignUpForm
 
 
 def frontpage(request):
     products = Product.objects.all()[0:8]
+
     return render(request, 'shop/frontpage.html', {'products': products})
 
 
@@ -67,5 +71,3 @@ def shop(request):
     }
 
     return render(request, 'shop/shop.html', context)
-
-

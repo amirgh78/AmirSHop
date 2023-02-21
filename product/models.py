@@ -1,17 +1,14 @@
-from django.db import models
-from django.utils import timezone
-from PIL import Image
-from io import BytesIO
-from django.core.files import File
 from django.contrib.auth.models import User
+from django.db import models
+from django.core.files import File
+
+from io import BytesIO
+from PIL import Image
 
 
 class Category(models.Model):
     name = models.CharField(max_length=255)
     slug = models.SlugField()
-    explanation = models.CharField(max_length=100)
-    modified_date = models.DateTimeField(auto_now=True)
-    created_date = models.DateTimeField(default=timezone.now)
 
     class Meta:
         verbose_name_plural = 'Categories'
@@ -54,10 +51,10 @@ class Product(models.Model):
 
     def make_thumbnail(self, image, size=(300, 300)):
         img = Image.open(image)
-        img.conver('RGB')
+        img.convert('RGB')
         img.thumbnail(size)
 
-        thumb_io = BytesIO
+        thumb_io = BytesIO()
         img.save(thumb_io, 'JPEG', quality=85)
 
         thumbnail = File(thumb_io, name=image.name)

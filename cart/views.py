@@ -1,6 +1,7 @@
-from django.shortcuts import render
-from django.contrib.auth.decorators import login_required
 from django.conf import settings
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import render
+
 from .cart import Cart
 
 from product.models import Product
@@ -25,7 +26,7 @@ def update_cart(request, product_id, action):
     cart = Cart(request)
 
     if action == 'increment':
-        cart.add(product_id, +1, True)
+        cart.add(product_id, 1, True)
     else:
         cart.add(product_id, -1, True)
 
