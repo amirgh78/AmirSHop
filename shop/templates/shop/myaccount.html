@@ -3,13 +3,13 @@
 {% block title %}My account{% endblock %}
 
 {% block content %}
-<div class="max-w-6xl mx-auto p-6">
+<div class="text-right max-w-6xl mx-auto p-6">
     <h1 class="mb-5 text-3xl">حساب من</h1>
 
     <div class="mb-6">
-        <strong>نام: </strong>{{ request.user.get_full_name }}<br>
-        <strong>نام کاربری: </strong>{{ request.user.username }}<br>
-        <strong>ایمیل: </strong>{{ request.user.email }}<br>
+        <strong></strong>نام و نام خانوادگی: {{ request.user.get_full_name }}<br>
+        <strong></strong>{{ request.user.username }} :نام کاربری <br>
+        <strong></strong>{{ request.user.email }} :ایمیل <br>
 
         <a href="{% url 'edit_myaccount' %}" class="inline-block mt-4 py-4 px-6 rounded-xl text-white bg-purple-500">تغییر</a>
     </div>
@@ -21,21 +21,17 @@
     {% for order in request.user.orders.all %}
         <div class="w-full mb-6 p-6 flex flex-wrap bg-gray-100 rounded-xl">
             <div class="mb-6 flex justify-between">
-                <a href="#">شماره سفارش: {{ order.id }}</a>
+                <a href="#">{{ order.id }} : شماره سفارش </a>
             </div>
 
             <div class="mb-6 w-full">
                 {% for item in order.items.all %}
                     <div class="product mb-6 flex pr-6">
-                        <a href="#" class="w-1/4">
-                            <img class="hover:shadow-lg rounded-xl" src="{{ item.product.get_thumbnail }}">
-                        </a>
-
                         <div class="w-3/4 pl-6">
                             <div class="flex justify-between">
-                                <a href="#" class="text-lg">{{ item.product.name }}</a>
-
                                 <p class="mb-6 pt-1 text-gray-400">${{ item.get_total_price }}</p>
+
+                                <a href="#" class="text-lg">{{ item.product.name }}</a>
                             </div>
 
                             <hr>
@@ -44,13 +40,17 @@
                                 تعداد: {{ item.quantity }}
                             </div>
                         </div>
+
+                    <a href="#" class="w-1/4">
+                        <img class="hover:shadow-lg rounded-xl" src="{{ item.product.get_thumbnail }}">
+                    </a>
                     </div>
                 {% endfor %}
             </div>
 
             <div>
-                <p class="text-lg">تاریخ: {{ order.created_at }}</p>
-                <p class="text-lg">جمع: ${{ order.get_total_price }}</p>
+                <p class="text-lg">{{ order.created_at }} : تاریخ </p>
+                <p class="text-lg">جمع مبلغ سفارش: ${{ order.get_total_price }}</p>
             </div>
         </div>
     {% endfor %}

@@ -3,7 +3,7 @@
 {% block title %}ویرایش مشخصات{% endblock %}
 
 {% block content %}
-<div class="max-w-6xl mx-auto p-6">
+<div class="text-right max-w-6xl mx-auto p-6">
     <h1 class="mb-5 text-3xl">ویرایش مشخصات</h1>
 
     <form method="post" action="." class="space-y-3">
@@ -29,8 +29,8 @@
             <input name="email" value="{{ request.user.email }}" type="email" class="w-full mt-2 py-4 px-6 bg-gray-100 rounded-xl">
         </div>
 
-        <div>
-            <button class="py-4 px-6 rounded-xl text-white bg-purple-500">ثبت</button>
+        <div class="text-center">
+            <button class="py-4 px-6 rounded-xl text-white bg-purple-500">ثبت و ویرایش</button>
         </div>
     </form>
 </div>

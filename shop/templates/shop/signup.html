@@ -4,8 +4,8 @@
 
 {% block content %}
 <div class="max-w-lg mx-auto flex flex-wrap p-6">
-    <div class="w-full bg-gray-100 p-6 rounded-xl">
-        <h1 class="mb-6 text-2xl">ثبت نام</h1>
+    <div class="text-right w-full bg-gray-100 p-6 rounded-xl">
+        <h1 class="text-center mb-6 text-2xl">ثبت نام در فروشگاه من</h1>
 
         <form method="post" action="." class="space-y-3">
             {% csrf_token %}
@@ -56,11 +56,11 @@
                 {% endfor %}
             {% endif %}
 
-            <div>
-                <button class="py-4 px-6 rounded-xl text-white bg-purple-500 hover:bg-purple-700">ثبت</button>
+            <div class="text-center">
+                <button class="py-4 px-6 rounded-xl text-white bg-purple-500 hover:bg-purple-700">ثبت نام</button>
             </div>
 
-        <p class="text-center">اگر حساب کاربری دارید، <a class="text-purple-500 hover:text-purple-800" href="/login">وارد</a>شوید.</p>
+        <p class="text-center">اگر حساب کاربری دارید، <a class="text-purple-500 hover:text-purple-800" href="/login">وارد </a>شوید</p>
 
         </form>
     </div>
