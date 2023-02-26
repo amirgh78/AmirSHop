@@ -2,7 +2,7 @@
     <div class="product mb-6 flex pr-6" id="cart-item-{{ item.product.id }}">
         <div class="w-3/4 pl-6">
             <div class="flex justify-between">
-                <span class="mb-6 pt-1 text-gray-400">${{ item.total_price }}</span>
+                <span class="mb-6 pt-1 text-gray-400">{{ item.total_price }}</span>
 
                 <a href="{% url 'product' item.product.slug %}" class="text-lg">{{ item.product.name }}</a>
             </div>

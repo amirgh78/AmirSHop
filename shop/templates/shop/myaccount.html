@@ -29,7 +29,7 @@
                     <div class="product mb-6 flex pr-6">
                         <div class="w-3/4 pl-6">
                             <div class="flex justify-between">
-                                <p class="mb-6 pt-1 text-gray-400">${{ item.get_total_price }}</p>
+                                <p class="mb-6 pt-1 text-gray-400">{{ item.get_total_price }}</p>
 
                                 <a href="#" class="text-lg">{{ item.product.name }}</a>
                             </div>
@@ -50,7 +50,7 @@
 
             <div>
                 <p class="text-lg">{{ order.created_at }} : تاریخ </p>
-                <p class="text-lg">جمع مبلغ سفارش: ${{ order.get_total_price }}</p>
+                <p class="text-lg">جمع مبلغ سفارش: {{ order.get_total_price }}</p>
             </div>
         </div>
     {% endfor %}
